@@ -56,23 +56,4 @@ export default {
   align-content: stretch;
   gap: 1rem;
 }
-
-.add-post__input {
-  border: 1px solid green;
-  padding: 0.4rem 0.6rem;
-}
-
-.add-post__body {
-  border: 1px solid green;
-  padding: 0.4rem 0.6rem;
-}
-
-input:focus,
-textarea:focus,
-input:hover,
-textarea:hover {
-  &:hover {
-    box-shadow: 0 0 14px rgba(green, 0.2);
-  }
-}
 </style>
