@@ -34,22 +34,18 @@ export default {
   },
   methods: {
     createPost() {
-      this.id = Date.now();
-      let newPost = {
-        id: this.post.id,
-        title: this.post.title,
-        body: this.post.body,
-      };
-      this.$emit("createPost", { newPost });
-      this.post.title = "";
-      this.post.body = "";
+      this.post.id = Date.now();
+      this.$emit("createPost", this.post);
     },
   },
-  watch: {
-    post(newVal) {
-      console.log(newVal);
-    },
-  },
+  // watch: {
+  //   post: {
+  //     handler(newVal) {
+  //       console.log(newVal);
+  //     },
+  //     deep: true,
+  //   },
+  // },
 };
 </script>
 

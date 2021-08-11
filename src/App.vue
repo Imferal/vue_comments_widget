@@ -61,7 +61,7 @@ export default {
       try {
         this.isPostsFetching = true;
         const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/posts?_limit=10"
+          "https://jsonplaceholder.typicode.com/posts?_limit=3"
         );
         this.posts = response.data;
       } catch (error) {
@@ -73,6 +73,15 @@ export default {
   },
   mounted() {
     this.fetchPosts();
+  },
+  watch: {
+    selectedSort(newValue) {
+      // Сортировка постов по выбранному признаку
+      this.posts.sort((post1, post2) => {
+        // Сравниваем название или описание одного поста с другим
+        return post1[newValue]?.localeCompare(post2[newValue]);
+      });
+    },
   },
 };
 </script>
